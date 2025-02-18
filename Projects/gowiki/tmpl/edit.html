@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Editing {{.Title}}</h1>
+
+    <form action="/save/{{.Title}}" method="POST">
+      <div>
+        <!-- Menampilkan Body yang sudah dikonversi -->
+        <textarea name="body">{{bytesToString .Body}}</textarea>
+      </div>
+      <div><input type="submit" value="Save" /></div>
+    </form>
+  </body>
+</html>
